@@ -1,4 +1,4 @@
-:80 {
+localhost {
     tls internal
     reverse_proxy code-server:8080
 }
