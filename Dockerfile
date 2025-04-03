@@ -19,4 +19,4 @@ ENV PATH="/usr/local/go/bin:${PATH}"
 RUN useradd -m coder && echo "coder ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 # Switch back to the default non-root user expected by code-server.
-USER nexus
+USER "nexus"
