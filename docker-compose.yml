@@ -1,0 +1,30 @@
+version: "3.8"
+services:
+  code-server:
+    build: .
+    env_file: .env
+    volumes:
+      - ./config:/config
+      - ./workspace:/config/workspace
+    expose:
+      - "8080"
+    restart: unless-stopped
+
+  caddy:
+    image: caddy:2-alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      # Uncomment the following lines if you want to persist Caddy’s certificate data:
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - code-server
+    restart: unless-stopped
+
+# Uncomment the following volumes if you choose to persist Caddy data:
+volumes:
+  caddy_data:
+  caddy_config:
