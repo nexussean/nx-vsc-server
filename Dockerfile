@@ -7,10 +7,10 @@ USER root
 RUN apt-get update && apt-get install -y wget sudo
 
 # Install Go 1.24
-RUN wget https://go.dev/dl/go1.24.linux-amd64.tar.gz \
+RUN wget https://go.dev/dl/go1.24.2.linux-amd64.tar.gz \
     && rm -rf /usr/local/go \
-    && tar -C /usr/local -xzf go1.24.linux-amd64.tar.gz \
-    && rm go1.24.linux-amd64.tar.gz
+    && tar -C /usr/local -xzf go1.24.2.linux-amd64.tar.gz \
+    && rm go1.24.2.linux-amd64.tar.gz
 
 # Update PATH so that the Go binary is available
 ENV PATH="/usr/local/go/bin:${PATH}"
