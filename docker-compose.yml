@@ -5,6 +5,9 @@ services:
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
+      - TZ=${TZ}
+      - PASSWORD=${PASSWORD}
+      - PORT=${PORT}
     volumes:
       - ./config:/config
       - ./workspace:/config/workspace
