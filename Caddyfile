@@ -1,9 +1,4 @@
-localhost:80 {
-    # Automatically redirect HTTP to HTTPS
+localhost {
+    tls internal
     reverse_proxy code-server:8080
-
-    # Optional: Set additional headers or customize further as needed.
-    # header {
-    #     Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
-    # }
 }
