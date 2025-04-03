@@ -8,8 +8,6 @@ services:
     volumes:
       - ./config:/config
       - ./workspace:/config/workspace
-    expose:
-      - "8080"
     restart: unless-stopped
 
   caddy:
