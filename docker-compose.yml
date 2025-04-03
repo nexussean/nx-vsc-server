@@ -11,9 +11,6 @@ services:
 
   caddy:
     image: caddy:2-alpine
-    ports:
-      - "80:80"
-      - "443:443"
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile:ro
       # Uncomment the following lines if you want to persist Caddy’s certificate data:
