@@ -44,8 +44,7 @@ my-code-server/
    - Edit the `.env` file to set your timezone, hashed password, and workspace directory.
    - For the password, generate a bcrypt hash using:
      ```bash
-     htpasswd -bnBC 10 "" yourpassword | tr -d ':
-'
+     htpasswd -bnBC 10 "" yourpassword | tr -d ':\n'
      ```
    - Replace `YOUR_HASHED_PASSWORD_HERE` with your generated hash.
 
