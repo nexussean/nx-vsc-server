@@ -16,7 +16,7 @@ RUN wget https://go.dev/dl/go1.24.2.linux-amd64.tar.gz \
 ENV PATH="/usr/local/go/bin:${PATH}"
 
 # (Optional) Create a non-root user with sudo privileges.
-RUN useradd -m nexus && echo "nexus ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+RUN useradd -u 1001 -m nexus && echo "nexus ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 # Switch back to the default non-root user expected by code-server.
 USER nexus
